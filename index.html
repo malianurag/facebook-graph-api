@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facebook Information</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Anurag Mali">
+
+	<!--external cdn link-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- main css file -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+	
+	<!-- title page-->
+	<header class="main-header">
+		<div class="header-div container">
+			<div class="row justify-content-center row-custom">
+				<div class="col-sm-12 col-md-8 input-div">
+					<h1 class="h1-custom">Enter Your Access Token</h1>
+					<input type="text" class="form-control input-custom" placeholder="Enter valid token">
+					<button type="button" class="btn btn-custom" id="submitBtn">Submit Token</button>				
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!--about section-->
+	<section class="about-section">
+		<div class="container-fluid">
+			<div class="row header-bar">
+				<div class="col-md-2">
+					<h3 class="main-title">Facebook API demo</h3>
+				</div>
+				<div class="col-md-8">
+					<h2 class="welcome-title">Hello,</h2>
+				</div>
+				<div class="col-md-2">
+					<button class="btn exit-btn logout-btn">Logout</button>
+				</div>
+			</div>
+			<div class="row justify-content-center info-row">
+				<div class="col-sm-10 info-col">
+					<p class="lead">Hello friends, This is demo for the facebook api. I have tried to show you, how we can access your facebook information using facebook graph api. Provided you should give access token ad all the necessary permissions</p>
+					<p class="lead">Facebook graph api is one of the coolest api available on the web. This gives access to almost all the information associated with your profile. Also this api is highly secured from hacks and leak of sensetive information. Facebook changes token after certian period of time, so that no one can use it for long time. Also user is informed about access of the token and asked for permission. Access level can be customized.</p>
+					<p class="lead">To know more about your profile info and recent feeds, click following buttons</p>
+				</div>
+			</div>
+			<!-- profile and feeds button row -->
+			<div class="row justify-content-center btn-row">
+				<div class="col-md-3"><button id="profileBtn" class="btn exit-btn">Profile Info</button></div>
+				<div class="col-md-1"></div>
+				<div class="col-md-3"><button id="feedBtn" class="btn exit-btn">Recent Feeds</button></div>
+				<div class="col-sm-12"><button class="btn exit-btn logout-btn logout-btn-sm">Logout</button></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- profile section-->
+	<section class="profile-section">
+		<div class="container-fluid">
+
+			<!-- back and logout button row -->
+			<div class="row header-bar">
+				<div class="col-sm-2">
+					<button class="btn exit-btn back-btn">Go Back</button>
+				</div>
+				<div class="col-sm-8 title-row">
+					<h2 class="name-header"></h2>
+					<img src="" alt="profile photo" class="img-profile">
+				</div>
+				<div class="col-sm-2">
+					<button class="btn exit-btn logout-btn">Logout</button>
+				</div>
+			</div>
+
+			<!-- cover photo row -->
+			<div class="row justify-content-center">
+				<div class="col-sm-8 img-container">
+				</div>
+			</div>
+
+			<!-- basic profile info row -->
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<h3 id="headerProfile" class="">Basic Profile Info</h3>
+				</div>
+			</div>
+			<div class="row justify-content-center info-row">
+				<div class="col-md-4 col-sm-8">
+					<table class="table table-hover table-responsive">
+						<tbody>
+							<tr class="table-row">
+								<td style="width: 40%;"><span class="span-td" style="width: 40%;">Email :</span></td>
+								<td style="width: 60%">
+									<span class="email-span fb-response" style="width: 60%;"></span>
+								</td>
+							</tr>
+							<tr class="table-row">
+								<td style="width: 40%;"><span class="span-td" style="width: 40%;">Age Group :</span></td>
+								<td style="width: 60%">
+									<span class="age-span fb-response" style="width: 60%;"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-4 col-sm-8">
+					<table class="table table-hover table-responsive">
+						<tbody>
+							<tr class="table-row">
+								<td style="width: 40%;"><span class="span-td" style="width: 40%;">Birthday :</span></td>
+								<td style="width: 60%">
+									<span class="birthday-span fb-response" style="width: 60%;"></span>
+								</td>
+							</tr>
+							<tr class="table-row">
+								<td style="width: 40%;"><span class="span-td" style="width: 40%;">Location :</span></td>
+								<td style="width: 60%">
+									<span class="location-span fb-response" style="width: 60%;"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- education info row -->
+			<div class="row justify-content-center" id="eduHead">
+				<div class="col-md-8">
+					<h3 id="headerEducation" class="">Eduacation Details</h3>
+				</div>
+			</div>
+			<div class="row justify-content-center" id="eduDetails">
+				<div class="col-md-8">
+					<table class="table table-hover table-responsive">
+						<tbody>
+							<tr class="table-row" id="r1">
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Institute :</span></td>	
+								<td style="width: 40%">
+									<span class="institute-span fb-response" style="width: 40%;"></span>
+								</td>
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Type :</span></td>
+								<td style="width: 20%">
+									<span class="type-span fb-response" style="width: 40%;"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="r2">
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Institute :</span></td>	
+								<td style="width: 40%">
+									<span class="institute-span fb-response" style="width: 40%;"></span>
+								</td>
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Type :</span></td>
+								<td style="width: 20%">
+									<span class="type-span fb-response" style="width: 40%;"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="r3">
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Institute :</span></td>	
+								<td style="width: 40%">
+									<span class="institute-span fb-response" style="width: 40%;"></span>
+								</td>
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Type :</span></td>
+								<td style="width: 20%">
+									<span class="type-span fb-response" style="width: 40%;"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="r4">
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Institute :</span></td>	
+								<td style="width: 40%">
+									<span class="institute-span fb-response" style="width: 40%;"></span>
+								</td>
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Type :</span></td>
+								<td style="width: 20%">
+									<span class="type-span fb-response" style="width: 40%;"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="r5">
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Institute :</span></td>	
+								<td style="width: 40%">
+									<span class="institute-span fb-response" style="width: 40%;"></span>
+								</td>
+								<td style="width: 20%"><span class="span-td" style="width: 20%;">Type :</span></td>
+								<td style="width: 20%">
+									<span class="type-span fb-response" style="width: 40%;"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- hidden back and logout button row -->
+			<div class="row btn-row">
+				<div class="col-sm-12"><button class="btn exit-btn back-btn back-btn-sm">Go Back</button></div>
+				<div class="col-sm-12"><button class="btn exit-btn logout-btn logout-btn-sm">Logout</button></div>	
+			</div>
+			
+		</div>
+	</section>	
+
+	<!-- feeds section -->
+	<section class="feeds-section">
+		<div class="container-fluid">
+
+			<!-- back and logout button row -->
+			<div class="row header-bar">
+				<div class="col-sm-2">
+					<button class="btn exit-btn back-btn">Go Back</button>
+				</div>
+				<div class="col-sm-8 title-row">
+					<h2 class="name-header"></h2>
+					<img src="" alt="profile photo" class="img-profile">
+				</div>
+				<div class="col-sm-2">
+					<button class="btn exit-btn logout-btn">Logout</button>
+				</div>
+			</div>
+
+			<!-- feeds info row -->
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<h3 id="headerProfile" class="">Latest Feeds</h3>
+				</div>
+			</div>
+			<div class="row justify-content-center" id="feedDetails">
+				<div class="col-md-8">
+					<table class="table table-hover table-responsive">
+						<thead>
+							<tr class="">
+								<th style="width: 25%">Post from</th>
+								<th style="width: 50%">Message</th>
+								<th style="width: 25%">Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="table-row" id="f1">
+								<td style="width: 25%">
+									<span class="from-span fb-response"></span>
+								</td>
+								<td style="width: 50%">
+									<span class="message-span fb-response"></span>
+								</td>
+								<td style="width: 25%">
+									<span class="date-span fb-response"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="f2">
+								<td style="width: 25%">
+									<span class="from-span fb-response"></span>
+								</td>
+								<td style="width: 50%">
+									<span class="message-span fb-response"></span>
+								</td>
+								<td style="width: 25%">
+									<span class="date-span fb-response"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="f3">
+								<td style="width: 25%">
+									<span class="from-span fb-response"></span>
+								</td>
+								<td style="width: 50%">
+									<span class="message-span fb-response"></span>
+								</td>
+								<td style="width: 25%">
+									<span class="date-span fb-response"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="f4">
+								<td style="width: 25%">
+									<span class="from-span fb-response"></span>
+								</td>
+								<td style="width: 50%">
+									<span class="message-span fb-response"></span>
+								</td>
+								<td style="width: 25%">
+									<span class="date-span fb-response"></span>
+								</td>
+							</tr>
+							<tr class="table-row" id="f5">
+								<td style="width: 25%">
+									<span class="from-span fb-response"></span>
+								</td>
+								<td style="width: 50%">
+									<span class="message-span fb-response"></span>
+								</td>
+								<td style="width: 25%">
+									<span class="date-span fb-response"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- hidden logout and back button row -->
+			<div class="row btn-row">
+				<div class="col-sm-12"><button class="btn exit-btn back-btn back-btn-sm">Go Back</button></div>
+				<div class="col-sm-12"><button class="btn exit-btn logout-btn logout-btn-sm">Logout</button></div>	
+			</div>
+
+		</div>
+	</section>
+
+	<!-- JQuery and app.js link-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.main-header {
+	background-image: url("../img/6.jpg");
+	background-size: cover;
+	background-position: center;
+	background-clip: content-box;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+}
+
+.header-div {
+	text-align: center;
+}
+
+.row-custom {
+	padding-top: 5%;
+}
+
+.h1-custom {
+	text-shadow: 3px 3px 5px #3643F2;
+	margin-bottom: 16px;
+}
+.input-div {
+	color: white;
+}
+
+.input-custom {
+	background-color: #191919;
+	box-shadow: 0 0 3px 3px #3643F2;
+	width: 100%;
+	height: 46px;
+	font-size: 24px;
+}
+
+.input-custom:focus {
+	background-color: #191919;	
+	color: white;
+	border: 2px solid #3643F2;
+	font-size: 24px;
+}
+
+.btn-custom {
+	margin-top: 16px;
+	background-color: #191919;	
+	color: white;
+	box-shadow: 0 0 3px 3px #3643F2;
+	width: 100%;
+	font-size: 32px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	cursor: pointer;
+	text-shadow: 2px 2px 4px #3643F2;
+}
+
+.btn-custom:focus {
+	box-shadow: 0 0 4px 4px #3643F2;
+}
+
+.about-section {
+	background-color: #c4cde0;
+	height: 100%;
+}
+
+
+.header-bar {
+	background-color: #3b5998;
+	padding-top: 16px;
+}
+
+.main-title {
+	color: #ebeef4;
+	border: 2px solid #ebeef4;
+	border-radius: 8px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	padding: 8px 4px 8px 4px;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.welcome-title {
+	font-size: 2rem;
+	color: #ebeef4;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+.exit-btn {
+	background-color: #3b5998;
+	border: 2px solid #ebeef4;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	width: 100%;
+	color: #ebeef4;
+	font-size: 1.2rem;
+	cursor: pointer;
+	padding: 8px 4px 8px 4px; 
+}
+
+.info-row {
+	background-color: #c4cde0;
+	color: #17233c;
+	margin-top: 20px;
+	font-size: 1.25rem;
+	font-weight: 300;
+}
+
+#eduDetails {
+	background-color: #c4cde0;
+	color: #17233c;
+	margin-top: 20px;	
+	font-size: 1.25rem;
+	font-weight: 300;
+}
+
+#feedDetails {
+	background-color: #c4cde0;
+	color: #17233c;
+	margin-top: 20px;	
+	font-size: 1.25rem;
+	font-weight: 300;
+
+}
+
+.btn-row {
+	background-color: #c4cde0;
+}
+
+.profile-section {
+	background-color: #c4cde0;
+}
+
+.img-profile {
+	height: 70px;
+	width: 70px;
+	border-radius: 35px;
+	margin-top: 8px;
+	margin-bottom: 16px;
+	display: inline;
+}
+
+.name-header {
+	font-size: 2rem;
+	color: #ebeef4;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	margin-right: 8px;
+	text-align: center;	
+	display: inline;
+}
+
+.title-row {
+	text-align: center;
+}
+
+.img-container {
+	width: 100%;
+	height: 500px;
+	background-image: url("");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 40% 40%;
+}
+
+#headerProfile, #eduHead {
+	text-align: center;
+	padding-top: 40px;
+	color: #17233c;
+}
+
+#headerEducation {
+	text-align: center;
+	margin-top: 20px;	
+}
+
+.feeds-section {
+	background-color: #c4cde0;	
+	height: 100%;
+}
+
+.logout-btn-sm , .back-btn-sm {
+	display: none;	
+}
+
+.span-td {
+	margin-bottom: 0px;
+	margin-top: 8px;
+}
+/*hides logout and back buttons from header and shows at bottom of page*/
+@media only screen and (max-width: 767px) {
+	.main-title,
+	.logout-btn, 
+	.back-btn {
+		display: none;
+	}
+	.logout-btn-sm, 
+	.back-btn-sm {
+		display: block;
+	}
+}
