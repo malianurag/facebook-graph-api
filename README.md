@@ -1,28 +1,31 @@
 ## Welcome to Facebook graph api demo Repository
 
   This is demo for the facebook api. I have tried to show you, how we can access your facebook information using facebook graph api. Provided you should give access token ad all the necessary permissions.
-	Facebook graph api is one of the coolest api available on the web. This gives access to almost all the information associated with your profile. Also this api is highly secured from hacks and leak of sensetive information. Facebook changes token after certian period of time, so that no one can use it for long time. Also user is informed about access of the token and asked for permission. Access level can be customized.
+  Facebook graph api is one of the coolest api available on the web. This gives access to almost all the information associated with your profile. Also this api is highly secured from hacks and leak of sensetive information. Facebook changes token after certian period of time, so that no one can use it for long time. Also user is informed about access of the token and asked for permission. Access level can be customized.
   Your guidance & suggestions will be appreciated. Thank you
 
 ### Layout Description
 
-Website uses following stadard bootstrap rules for the layout design
+Website uses standard html, css and bootstrap rules for the layout design
 ```markdown
-All the sections are responsive including navbar and footer
+All the sections are responsive including images and tables
 All sections are started with <div> element with standard bootstrap 
-class "container".  
-
-## General block section structure
+class "container-fluid".  
+This demo mainly focus on ajax request to facebook graph api
+## General structure for ajax request is as follow
 `
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-*-*"></div>
-            .
-            .
-        </div>
-    </div>
- </section>
+$.ajax("url"+access_token, {
+	type : ''
+	success : function() {
+		// handle success
+	},
+	error : function() {
+		// handle error
+	}
+});
+
+$(selector).handleEvent(function() {
+});
 `
 ```
 
