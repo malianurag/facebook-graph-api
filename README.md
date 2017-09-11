@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+## Welcome to Facebook graph api demo Repository
 
-You can use the [editor on GitHub](https://github.com/malianurag/facebook-graph-api/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+  This is demo for the facebook api. I have tried to show you, how we can access your facebook information using facebook graph api. Provided you should give access token ad all the necessary permissions.
+	Facebook graph api is one of the coolest api available on the web. This gives access to almost all the information associated with your profile. Also this api is highly secured from hacks and leak of sensetive information. Facebook changes token after certian period of time, so that no one can use it for long time. Also user is informed about access of the token and asked for permission. Access level can be customized.
+  Your guidance & suggestions will be appreciated. Thank you
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Layout Description
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+Website uses following stadard bootstrap rules for the layout design
 ```markdown
-Syntax highlighted code block
+All the sections are responsive including navbar and footer
+All sections are started with <div> element with standard bootstrap 
+class "container".  
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## General block section structure
+`
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-*-*"></div>
+            .
+            .
+        </div>
+    </div>
+ </section>
+`
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+For more details see source code at [here](https://github.com/malianurag/facebook-graph-api).
 
-### Jekyll Themes
+### Anurag Theme
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/malianurag/facebook-graph-api/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Website will have theme based on the css file in css/main.css file and some predefined bootstrap classes.
+Bootstrap is used from cdn at runtime. Text font and some symbols are also used from cdn. Links for all 
+cdn used are in head section of main.html file
 
-### Support or Contact
+### Support & Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+In case of any question or suggestion mail me at vision2realityanurag@yahoo.in.
+Your suggestions will be appreciated. Thank You!!!
